@@ -23,10 +23,7 @@ buttons:
 # Handling Reading
 safe: true
 exclude:
-  - node_modules
   - CNAME
-  - package.json
-  - package-lock.json
   - Vagrantfile
 
 # Plugins
