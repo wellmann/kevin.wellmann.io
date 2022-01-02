@@ -24,7 +24,7 @@ buttons:
 safe: true
 exclude:
   - CNAME
-  - Vagrantfile
+  - README.md
 
 # Plugins
 gems:
