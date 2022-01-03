@@ -1,0 +1,13 @@
+@import "modules/_shared/variables";
+@import "modules/_shared/mixins";
+
+.module-header {
+  @include brick-wall($background-secondary);
+  padding-top: 44px;
+  padding-bottom: 44px;
+  text-align: center;
+
+  &__link {
+    display: inline-block;
+  }
+}

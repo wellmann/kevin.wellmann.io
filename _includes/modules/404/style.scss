@@ -1,7 +1,5 @@
-//
-// 404 styles
-// @author Kevin Wellmann
-//
+@import "modules/_shared/variables";
+@import "modules/_shared/mixins";
 
 body.page-404 {
   @include brick-wall($background-secondary);

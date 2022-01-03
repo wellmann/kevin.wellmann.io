@@ -14,11 +14,17 @@
   <meta name="description" content="{{ site.description }}">
   <title>{{ site.title }}</title>
   <link rel="canonical" href="{{ site.url ~ page.url }}">
-  <link rel="preload" href="/assets/fonts/north-regular-webfont.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/pacifico-webfont-custom.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/static/fonts/north-regular-webfont.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/static/fonts/pacifico-webfont-custom.woff2" as="font" type="font/woff2" crossorigin>
   <style>
   {% capture inline_scss %}
-    {% include styles.scss %}
+    {% include common.scss %}
+    {% include modules/about/style.scss %}
+    {% include modules/contact/style.scss %}
+    {% include modules/footer/style.scss %}
+    {% include modules/header/style.scss %}
+    {% include modules/logo/style.scss %}
+    {% include modules/resume/style.scss %}
   {% endcapture %}
   {{ inline_scss | scssify }}
   </style>

@@ -13,12 +13,15 @@ buttons:
     
   - title: Github
     link: https://github.com/wellmann
+    color: "#6e5494"
     
   - title: Xing
     link: https://www.xing.com/profile/Kevin_Wellmann
+    color: "#cfdc00"
   
   - title: LinkedIn
     link: https://linkedin.com/in/kevin-wellmann-6b7819192
+    color: "#0077b5"
 
 # Handling Reading
 safe: true
@@ -33,7 +36,7 @@ gems:
 
 # SASS
 sass:
-    sass_dir: assets/css
+    sass_dir: _includes
     style: compressed
 
 # Markdown Processors

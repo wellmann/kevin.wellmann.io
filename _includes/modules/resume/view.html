@@ -1,0 +1,20 @@
+<aside class="module-resume">
+    <h3 class="screen-reader-text">module-resume</h3>
+    <ol class="module-resume__list">
+      {% for item in site.data.resume.experience limit: 3 %}
+        <li class="module-resume__item">
+          <span class="module-resume__period">
+            {% if forloop.first %}
+              today
+            {% else %}
+              {{ item.date }}
+            {% endif %}
+          </span>
+          <div class="module-resume__details">
+            <span class="module-resume__company">{{ item.title }}</span>
+            <p class="fade-in">{{ item.content }}</p>
+          </div>
+        </li>
+      {% endfor %}
+    </ol>
+  </aside>

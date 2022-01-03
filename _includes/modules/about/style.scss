@@ -1,0 +1,19 @@
+@import "modules/_shared/variables";
+@import "modules/_shared/mixins";
+
+.module-about {
+  display: grid;
+  gap: 5%;
+
+  @media (min-width: $mobile-breakpoint) {
+    grid-template-columns: 1fr 350px;
+
+    &__title {
+      grid-column: span 2;
+    }
+  }
+
+  &__bio {
+    padding-bottom: $section-spacing;
+  }
+}

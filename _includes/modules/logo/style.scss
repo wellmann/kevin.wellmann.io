@@ -1,0 +1,75 @@
+@import "modules/_shared/variables";
+@import "modules/_shared/mixins";
+
+.module-logo {
+  --color: 238, 238, 238;
+  color: var(--color);
+  text-shadow: 0 -4px 100px, 0 0 2px,
+    0 0 1em rgba(var(--color), .4),
+    0 0 0.5em rgba(var(--color), .4),
+    0 0 0.1em rgba(var(--color), .4),
+    0 5px 3px #000;
+  transform: scale(.85);
+  white-space: nowrap;
+  user-select: none;
+  -webkit-touch-callout: none;
+
+  :focus & {
+    --color: #{red($color-highlight)}, #{green($color-highlight)}, #{blue($color-highlight)};
+  }
+
+  @media(min-width: $mobile-breakpoint) {
+    transform: scale(1);
+  }
+
+  &__title {
+    @include display-font(22.5px);
+  }
+  
+  &__subtitle {
+    font: 39px/1.2 'Pacifico', cursive;
+    letter-spacing: .06em;
+    text-indent: -.25em;
+  }
+
+  &__defunct {
+    @media (prefers-reduced-motion: no-preference) {
+      animation: neon-sign-defunct linear infinite 2s;
+    }
+  }
+}
+
+// @link http://codepen.io/nodws/pen/bdjwn
+@keyframes neon-sign-defunct {
+  78% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  79%{
+     color: #1d1d1d;
+  }
+  80% {
+
+    text-shadow: none;
+  }
+  81% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  82% {
+    color: #1d1d1d;
+    text-shadow: none;
+  }
+  83% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  92% {
+    color: #1d1d1d;
+    text-shadow: none;
+  }
+  92.5% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+}

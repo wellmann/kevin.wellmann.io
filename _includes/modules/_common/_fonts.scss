@@ -1,15 +1,10 @@
-//
-// Webfont definitions
-// @author Kevin Wellmann
-//
-
 // @link https://www.behance.net/gallery/42182937/North-Free-Font
 @font-face {
   font-family: 'North';
   font-style: normal;
   font-weight: 300;
   font-display: fallback;
-  src: url('/assets/fonts/north-regular-webfont.woff2') format('woff2');
+  src: url('/static/fonts/north-regular-webfont.woff2') format('woff2');
 }
 
 // @link https://fonts.googleapis.com/css?family=Pacifico&text=WebDvloprNtFund
@@ -18,5 +13,5 @@
   font-style: normal;
   font-weight: 400;
   font-display: fallback;
-  src: url('/assets/fonts/pacifico-webfont-custom.woff2') format('woff2');
+  src: url('/static/fonts/pacifico-webfont-custom.woff2') format('woff2');
 }

@@ -1,0 +1,109 @@
+:focus-visible {
+  box-shadow: 0 0 0 2px var(--highlight-color, $color-highlight);
+  outline: none;
+}
+
+::selection {
+  background: $color-highlight;
+  color: $background;
+}
+
+* {
+  @media (prefers-reduced-motion: no-preference) {
+    transition: transform 1s ease-in-out,
+    font-size 1s ease-in-out;
+  }
+
+  &,
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+html {
+  background: $background-secondary;
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+  font-size: 14px;
+  line-height: 1.7;
+  color: $color;
+}
+
+body {
+  margin: 0;
+  background: $background;
+}
+
+h1,
+h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h2 {
+  margin-bottom: 1em;
+  font-family: 'North', sans-serif;
+  font-size: #{"clamp(20px, 1.5vw + 1rem, 23px)"};
+  color: $background-light-contrast;
+}
+
+p {
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+a,
+button {
+  color: $color;
+  text-decoration: none !important;
+  -webkit-tap-highlight-color: var(--highlight-color, $color-highlight);
+
+  @media (prefers-reduced-motion: no-preference) {
+    &:hover,
+    &:focus {
+      transition: all .3s ease;
+    }
+  }
+}
+
+mark {
+  position: relative;
+  background: none;
+  color: inherit;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: draw-underline .9s forwards;
+
+    @media (prefers-reduced-motion: reduce) {
+      width: 100%;
+      animation: none;
+    }
+  }
+
+  &:nth-of-type(odd)::after {
+    transform: rotate(-2deg);
+    animation-delay: 1s;
+  }
+
+  &:nth-of-type(even)::after {
+    transform: rotate(-1deg);
+    animation-delay: 2s;
+  }
+}
+
+.site-main {
+  padding-top: $section-spacing;
+  padding-bottom: $section-spacing;
+}

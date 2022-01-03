@@ -3,8 +3,8 @@ layout: compress
 ---
 
 {% include head.html %}
-<body class="page-{{ page.name | remove: '.md' }}">
-  {% include header.html %}
+<body class="page-{{ page.name | remove: '.html' }}">
+  {% include modules/header/view.html %}
   <main class="site-main">
     <div class="wrapper">
       <article>
@@ -12,6 +12,12 @@ layout: compress
       </article>
     </div>
   </main>
-  {% include footer.html %}
+  {% include modules/footer/view.html %}
+  <script type="module">
+    {% capture inline_js %}
+      {% include components/current-year.js %}
+    {% endcapture %}
+    {{ inline_js }}
+    </script>
 </body>
 </html>
