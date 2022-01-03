@@ -99,7 +99,7 @@
 
   span {
     @include display-font(.8em);
-    color: $background-light-contrast;
+    color: lighten($background-light-contrast, 11);
   }
 
   p {
