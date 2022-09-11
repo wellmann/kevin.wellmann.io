@@ -1,11 +1,11 @@
 <section>
     <h2 class="screen-reader-text">Contact</h2>
-    <div class="button-group">
+    <nav class="button-group" aria-label="Links">
     {% for button in site.buttons %}
         {% if forloop.first %}
         <a href="{{ button.link }}" class="button">{{ button.title }}</a>
         {% else %}
-        <a href="{{ button.link }}" class="button" style="--highlight-color: {{ button.color }}" target="_blank" rel="noopener">{{ button.title }}</a>
+        <a href="{{ button.link }}" class="button" target="_blank" rel="noopener">{{ button.title }}</a>
         {% endif %}
     {% endfor %}
     </div>

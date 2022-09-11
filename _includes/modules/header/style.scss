@@ -1,8 +1,8 @@
-@import "modules/_shared/variables";
-@import "modules/_shared/mixins";
+@import "scss/_includes/variables",
+        "scss/_includes/mixins";
 
 .module-header {
-  @include brick-wall($background-secondary);
+  @include brick-wall(map-get($colors, "gray-850"));
   padding-top: 44px;
   padding-bottom: 44px;
   text-align: center;

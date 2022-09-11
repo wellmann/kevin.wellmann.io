@@ -2,7 +2,37 @@
 layout: compress
 ---
 
-{% include head.html %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+
+  WANT TO SEE THE REAL SOURCE 🌝 {{ site.repository }}
+
+  -->
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="generator" content="designed & coded with ♥">
+  <meta name="author" content="{{ site.author }}">
+  <meta name="description" content="{{ site.description }}">
+  <title>{{ site.title }}</title>
+  <link rel="canonical" href="{{ site.url ~ page.url }}">
+  <link rel="preload" href="/static/fonts/north-regular-webfont.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/static/fonts/pacifico-webfont-custom.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+  {% capture inline_scss %}
+    {% include scss/common.scss %}
+    {% include modules/about/style.scss %}
+    {% include modules/links/style.scss %}
+    {% include modules/footer/style.scss %}
+    {% include modules/header/style.scss %}
+    {% include modules/logo/style.scss %}
+    {% include modules/resume/style.scss %}
+  {% endcapture %}
+  {{ inline_scss | scssify }}
+  </style>
+</head>
 <body class="page-{{ page.name | remove: '.html' }}">
   {% include modules/header/view.html %}
   <main class="site-main">
@@ -15,7 +45,7 @@ layout: compress
   {% include modules/footer/view.html %}
   <script type="module">
     {% capture inline_js %}
-      {% include components/current-year.js %}
+      {% include web-components/current-year.js %}
     {% endcapture %}
     {{ inline_js }}
     </script>

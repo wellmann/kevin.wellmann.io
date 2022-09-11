@@ -1,9 +1,9 @@
-@import "modules/_shared/variables";
-@import "modules/_shared/mixins";
+@import "scss/_includes/variables",
+        "scss/_includes/mixins";
 
 .module-about {
   display: grid;
-  gap: 5%;
+  column-gap: 5%;
 
   @media (min-width: $mobile-breakpoint) {
     grid-template-columns: 1fr 350px;

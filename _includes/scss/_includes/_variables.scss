@@ -1,0 +1,14 @@
+$colors: (
+    "accent": #f6d980,
+    "gray-100": #c3c3c3,
+    "gray-300": #606060,
+    "gray-850": #1d1d1d,
+    "gray-900": #111
+);
+
+$font-family-base: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+$font-family-heading: 'North', sans-serif;
+$text-color: map-get($colors, "gray-100");
+
+$mobile-breakpoint: 880px;
+$section-spacing: 80px;

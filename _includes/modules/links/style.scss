@@ -1,3 +1,6 @@
+@import "scss/_includes/variables",
+        "scss/_includes/mixins";
+
 .button-group {
   display: flex;
   justify-content: center;
@@ -5,17 +8,15 @@
   gap: 30px;
 }
 
-@import "modules/_shared/variables";
-@import "modules/_shared/mixins";
-
 .button {
   @include display-font(.8em);
   position: relative;
   width: 100%;
   padding: 12px 24px;
-  border: 1px solid $background-light-contrast;
+  border: 1px solid map-get($colors, "gray-300");
   border-radius: 3px;
   text-align: center;
+  isolation: isolate;
 
   @media (min-width: $mobile-breakpoint) {
     width: auto;
@@ -30,10 +31,14 @@
     height: calc(100% + 12px);
     border: inherit;
     border-radius: inherit;
+    background-color: inherit;
+    z-index: -1;
   }
 
   &:hover,
   &:focus {
-    color: var(--highlight-color, $color-highlight);
+    background-color: $text-color;
+    color: map-get($colors, "gray-900");
+    border-color: map-get($colors, "gray-900");
   }
 }

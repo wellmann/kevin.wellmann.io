@@ -1,0 +1,65 @@
+.wrapper {
+  width: 80%;
+  max-width: 1140px;
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.inline-emoji {
+  font-size: 1.5em;
+  vertical-align: middle;
+  filter: grayscale(1);
+}
+
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+.fade-in {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: fade-in .9s;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  40% {
+    opacity: .1;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.cursor {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: blink 1.25s step-end infinite;
+  }
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}

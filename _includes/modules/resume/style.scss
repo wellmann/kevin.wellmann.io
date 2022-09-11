@@ -1,5 +1,5 @@
-@import "modules/_shared/variables";
-@import "modules/_shared/mixins";
+@import "scss/_includes/variables",
+        "scss/_includes/mixins";
 
 .module-resume {
   padding-bottom: $section-spacing;
@@ -10,6 +10,7 @@
   }
 
   &__list {
+    position: relative;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -17,12 +18,12 @@
     &::after {
       content: '';
       display: block;
-      position: relative;
+      position: absolute;
+      bottom: 0;
       left: 26%;
       width: 30px;
-      top: -30px;
       height: 30px;
-      background: linear-gradient(to top, $background 0%, rgba($background, 0) 100%);
+      background: linear-gradient(to top, map-get($colors, "gray-900") 0%, rgba(map-get($colors, "gray-900"), 0) 100%);
     }
   }
 
@@ -37,8 +38,8 @@
       left: 114px;
       width: 5px;
       height: 100%;
-      border-right: 1px double $background-light-contrast;
-      border-left: 1px double $background-light-contrast;
+      border-right: 1px double map-get($colors, "gray-300");
+      border-left: 1px double map-get($colors, "gray-300");
     }
   }
 
@@ -47,7 +48,7 @@
     position: relative;
     min-width: 130px;
     padding-right: 30px;
-    color: $color;
+    color: $text-color;
     text-align: right;
   
     &::after {
@@ -58,10 +59,10 @@
       right: 6px;
       width: 15px;
       height: 15px;
-      background-color: $background;
-      border: 1px solid $background-light-contrast;
+      background-color: map-get($colors, "gray-900");
+      border: 1px solid map-get($colors, "gray-300");
       border-radius: 50%;
-      box-shadow: 0 0 0 5px $background;
+      box-shadow: 0 0 0 5px map-get($colors, "gray-900");
     }
   }
 
@@ -72,6 +73,6 @@
 
   &__company {
     @include display-font(.8em);
-    color: lighten($background-light-contrast, 11);
+    color: lighten(map-get($colors, "gray-300"), 11);
   }
 }

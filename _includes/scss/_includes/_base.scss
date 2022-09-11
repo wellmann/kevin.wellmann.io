@@ -1,17 +1,16 @@
 :focus-visible {
-  box-shadow: 0 0 0 2px var(--highlight-color, $color-highlight);
-  outline: none;
+  outline: 2px dotted map-get($colors, "accent");
 }
 
 ::selection {
-  background: $color-highlight;
-  color: $background;
+  background: map-get($colors, "accent");
+  color: map-get($colors, "gray-900");
 }
 
 * {
   @media (prefers-reduced-motion: no-preference) {
     transition: transform 1s ease-in-out,
-    font-size 1s ease-in-out;
+      font-size 1s ease-in-out;
   }
 
   &,
@@ -22,16 +21,16 @@
 }
 
 html {
-  background: $background-secondary;
-  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
   font-size: 14px;
-  line-height: 1.7;
-  color: $color;
+  background: map-get($colors, "gray-850");
 }
 
 body {
   margin: 0;
-  background: $background;
+  background: map-get($colors, "gray-900");
+  font-family: $font-family-base;
+  line-height: 1.6;
+  color: $text-color;
 }
 
 h1,
@@ -42,14 +41,15 @@ h2 {
 
 h2 {
   margin-bottom: 1em;
-  font-family: 'North', sans-serif;
+  font-family: $font-family-heading;
   font-size: #{"clamp(20px, 1.5vw + 1rem, 23px)"};
-  color: $background-light-contrast;
+  color: map-get($colors, "gray-300");
 }
 
 p {
   margin-top: 15px;
   margin-bottom: 15px;
+  line-height: 2;
 
   &:first-of-type {
     margin-top: 0;
@@ -62,23 +62,16 @@ p {
 
 a,
 button {
-  color: $color;
+  color: $text-color;
   text-decoration: none !important;
-  -webkit-tap-highlight-color: var(--highlight-color, $color-highlight);
 
   @media (prefers-reduced-motion: no-preference) {
+
     &:hover,
     &:focus {
       transition: all .3s ease;
     }
   }
-}
-
-mark {
-  position: relative;
-  background: none;
-  color: inherit;
-  text-decoration: $background wavy underline;
 }
 
 .site-main {

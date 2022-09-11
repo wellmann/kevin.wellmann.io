@@ -1,12 +1,12 @@
-@import "modules/_shared/variables";
-@import "modules/_shared/mixins";
+@import "scss/_includes/variables",
+        "scss/_includes/mixins";
 
 .module-footer {
   @include display-font(10px);
   padding-top: ($section-spacing / 2);
   padding-bottom: ($section-spacing / 2);
-  background: $background-secondary;
-  color: $color;
+  background: map-get($colors, "gray-850");
+  color: $text-color;
 
   &__row {
     display: flex;
@@ -21,7 +21,7 @@
   }
 
   &__column {
-    background: $background-secondary;
+    background: map-get($colors, "gray-850");
 
     &:first-child {
       padding-right: 1em;

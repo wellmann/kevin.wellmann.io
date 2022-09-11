@@ -1,5 +1,5 @@
-@import "modules/_shared/variables";
-@import "modules/_shared/mixins";
+@import "scss/_includes/variables",
+        "scss/_includes/mixins";
 
 .module-logo {
   --color: 238, 238, 238;
@@ -15,7 +15,7 @@
   -webkit-touch-callout: none;
 
   :focus & {
-    --color: #{red($color-highlight)}, #{green($color-highlight)}, #{blue($color-highlight)};
+    --color: #{red(map-get($colors, "accent"))}, #{green(map-get($colors, "accent"))}, #{blue(map-get($colors, "accent"))};
   }
 
   @media(min-width: $mobile-breakpoint) {
