@@ -9,7 +9,7 @@ email: kevin@wellmann.io
 # Contact buttons
 buttons:
   - title: Say hi
-    link: mailto:hello@wellmann.io?subject=hi
+    link: mailto:kevin@wellmann.io?subject=hi
     
   - title: Github
     link: https://github.com/wellmann?tab=repositories
